@@ -12,6 +12,7 @@ import MarsCard from "./MarsCard";
 import VenusCard from "./VenusCard";
 import JupiterCard from "./JupiterCard";
 import SaturnCard from "./SaturnCard";
+import UranusCard from "./UranusCard";
 
 export const SolarSystem = () => {
 	const planets = [
@@ -157,6 +158,8 @@ export const SolarSystem = () => {
 			{planetClicked === "Mars" && <MarsCard />}
 			{planetClicked === "Jupiter" && <JupiterCard />}
 			{planetClicked === "Saturn" && <SaturnCard />}
+			{planetClicked === "Uranus" && <UranusCard />}
+			{planetClicked === "Neptune" && <NeptuneCard />}
 		</>
 	);
 };
