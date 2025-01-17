@@ -1,0 +1,98 @@
+.saturn-card {
+	padding: 1rem;
+}
+
+.saturn-card h2 {
+	font-size: 1rem;
+}
+
+.saturn-card-header h1 {
+	background: url(/textures/saturnmap.jpg);
+	color: transparent;
+	background-clip: text;
+	background-position: 30%;
+	background-size: 100% auto;
+	font-size: 2rem;
+}
+
+.saturn-card-body-content {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	margin-top: 1rem;
+}
+
+.saturn-card-body-content > div {
+	display: flex;
+	align-content: flex-start;
+	gap: 0.7rem;
+}
+
+.saturn-temperature,
+.saturn-periodicity,
+.saturn-atmosphere,
+.saturn-satellites,
+.saturn-rings,
+.saturn-composition,
+.saturn-distances,
+.saturn-particularites,
+.saturn-exploration {
+	display: flex;
+	flex-direction: column;
+}
+
+.saturn-temperature-list,
+.saturn-periodicity-list,
+.saturn-atmosphere-list,
+.saturn-atmosphere-particularites,
+.saturn-satellites-list,
+.saturn-rings-list,
+.saturn-composition-list,
+.saturn-distances-list,
+.saturn-distances-terre,
+.saturn-particularites-list,
+.saturn-exploration-list {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 0.5rem;
+}
+
+.saturn-temperature-list li,
+.saturn-periodicity-list li,
+.saturn-atmosphere-list li,
+.saturn-atmosphere-particularites li,
+.saturn-satellites-list li,
+.saturn-rings-list li,
+.saturn-composition-list li,
+.saturn-distances-list li,
+.saturn-particularites-list li {
+	text-decoration: none;
+	list-style-type: none;
+	margin-left: 1rem;
+}
+
+.saturn-distances-terre li,
+.saturn-exploration-sondes {
+	text-decoration: none;
+	list-style-type: none;
+	margin-left: 2rem;
+}
+
+.saturn-satellites p {
+	margin-left: 1rem;
+}
+
+.saturn-rings > *:not(:first-child),
+.saturn-atmosphere > *:not(:first-child),
+.saturn-exploration > h2:not(:first-child) {
+	margin-left: 1rem;
+}
+
+.saturn-rings-particularites {
+	text-decoration: none;
+	list-style-type: none;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
