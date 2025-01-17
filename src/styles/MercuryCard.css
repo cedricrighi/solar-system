@@ -1,0 +1,59 @@
+.mercury-card {
+	padding: 1rem;
+}
+
+.mercury-card h2 {
+	font-size: 1rem;
+}
+
+.mercury-card-header h1 {
+	background: url(/textures/mercurymap.jpg);
+	color: transparent;
+	background-clip: text;
+	font-size: 2rem;
+}
+
+.mercury-card-body-content {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	margin-top: 1rem;
+}
+
+.mercury-card-body-content > div {
+	display: flex;
+	align-content: flex-start;
+	gap: 0.7rem;
+	flex-wrap: wrap;
+}
+
+.mercury-card-body-content > div > p {
+	margin: auto 0;
+}
+
+.mercury-temperature,
+.mercury-periodicity,
+.mercury-composition,
+.mercury-distances {
+	display: flex;
+	flex-direction: column;
+}
+
+.mercury-temperature-list,
+.mercury-periodicity-list,
+.mercury-composition-list,
+.mercury-distances-list {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 0.5rem;
+}
+
+.mercury-temperature-list li,
+.mercury-periodicity-list li,
+.mercury-composition-list li,
+.mercury-distances-list li {
+	text-decoration: none;
+	list-style-type: none;
+	margin-left: 1rem;
+}

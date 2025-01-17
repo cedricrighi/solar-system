@@ -1,0 +1,78 @@
+.mars-card {
+	padding: 1rem;
+}
+
+.mars-card h2 {
+	font-size: 1rem;
+}
+
+.mars-card-header h1 {
+	background: url(/textures/marsmap.jpg);
+	color: transparent;
+	background-clip: text;
+	background-position: 0%;
+	background-size: 70% auto;
+	font-size: 2rem;
+}
+
+.mars-card-body-content {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	margin-top: 1rem;
+}
+
+.mars-card-body-content > div {
+	display: flex;
+	align-content: flex-start;
+	gap: 0.7rem;
+}
+
+.mars-temperature,
+.mars-periodicity,
+.mars-atmosphere,
+.mars-satellites,
+.mars-diameter,
+.mars-particularites,
+.mars-composition,
+.mars-distances,
+.mars-particularites,
+.mars-exploration {
+	display: flex;
+	flex-direction: column;
+}
+
+.mars-temperature-list,
+.mars-periodicity-list,
+.mars-atmosphere-list,
+.mars-satellites-list,
+.mars-diameter-list,
+.mars-particularites-list,
+.mars-atmosphere-couches,
+.mars-composition-list,
+.mars-distances-list,
+.mars-particularites-list,
+.mars-exploration-list,
+.mars-exploration-rovers {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 0.5rem;
+}
+
+.mars-temperature-list li,
+.mars-periodicity-list li,
+.mars-atmosphere-list li,
+.mars-satellites-list li,
+.mars-diameter-list li,
+.mars-particularites-list li,
+.mars-atmosphere-couches li,
+.mars-composition-list li,
+.mars-distances-list li,
+.mars-particularites-list li,
+.mars-exploration p,
+.mars-exploration-rovers li {
+	text-decoration: none;
+	list-style-type: none;
+	margin-left: 1rem;
+}

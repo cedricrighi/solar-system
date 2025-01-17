@@ -1,0 +1,70 @@
+.earth-card {
+	padding: 1rem;
+}
+
+.earth-card h2 {
+	font-size: 1rem;
+}
+
+.earth-card-header h1 {
+	background: url(/textures/earthmap.jpg);
+	color: transparent;
+	background-clip: text;
+	background-position: top;
+	background-size: 230% auto;
+	font-size: 2rem;
+}
+
+.earth-card-body-content {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	margin-top: 1rem;
+}
+
+.earth-card-body-content > div {
+	display: flex;
+	align-content: flex-start;
+	gap: 0.7rem;
+}
+
+.earth-diameter,
+.earth-temperature,
+.earth-periodicity,
+.earth-atmosphere,
+.earth-particularites,
+.earth-composition,
+.earth-distances,
+.earth-particularites {
+	display: flex;
+	flex-direction: column;
+}
+
+.earth-diameter-list,
+.earth-temperature-list,
+.earth-periodicity-list,
+.earth-atmosphere-list,
+.earth-particularites-list,
+.earth-atmosphere-couches,
+.earth-composition-list,
+.earth-distances-list,
+.earth-particularites-list {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 0.5rem;
+}
+
+.earth-diameter-list li,
+.earth-temperature-list li,
+.earth-periodicity-list li,
+.earth-atmosphere-list li,
+.earth-particularites-list li,
+.earth-atmosphere-couches li,
+.earth-composition-list li,
+.earth-distances-list li,
+.earth-particularites-list li {
+	text-decoration: none;
+	list-style-type: none;
+	margin-left: 1rem;
+}
