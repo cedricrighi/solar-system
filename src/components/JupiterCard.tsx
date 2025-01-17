@@ -1,3 +1,5 @@
+import "../styles/Jupitercard.css";
+
 const JupiterInfoCard = () => {
 	const jupiterData = {
 		type: "Planète géante gazeuse",
@@ -67,71 +69,71 @@ const JupiterInfoCard = () => {
 	};
 
 	return (
-		<div>
-			<div>
+		<section className="jupiter-card">
+			<article className="jupiter-card-header">
 				<h1>Jupiter</h1>
 				<p>{jupiterData.surnom}</p>
-			</div>
-			<div>
-				<div>
+			</article>
+			<article className="jupiter-card-content">
+				<div className="jupiter-card-body-content">
 					<div>
-						<h3>Type</h3>
+						<h2>Type:</h2>
 						<p>{jupiterData.type}</p>
 					</div>
 
 					<div>
-						<h3>Position</h3>
+						<h2>Position:</h2>
 						<p>{jupiterData.position}</p>
 					</div>
 
 					<div>
-						<h3>Diamètre</h3>
+						<h2>Diamètre:</h2>
 						<p>{jupiterData.diameter}</p>
 					</div>
 
 					<div>
-						<h3>Masse</h3>
+						<h2>Masse:</h2>
 						<p>{jupiterData.mass}</p>
 					</div>
 
-					<div>
-						<h3>Températures</h3>
-						<ul>
+					<div className="jupiter-temperature">
+						<h2>Températures:</h2>
+						<ul className="jupiter-temperature-list">
 							<li>Nuages: {jupiterData.surfaceTemp.nuages}</li>
 							<li>Cœur: {jupiterData.surfaceTemp.coeur}</li>
 						</ul>
 					</div>
 
-					<div>
-						<h3>Périodes</h3>
-						<ul>
+					<div className="jupiter-periodicity">
+						<h2>Périodes:</h2>
+						<ul className="jupiter-periodicity-list">
 							<li>Révolution: {jupiterData.periodicity.revolution}</li>
 							<li>Rotation: {jupiterData.periodicity.rotation}</li>
 							<li>{jupiterData.periodicity.info}</li>
 						</ul>
 					</div>
 
-					<div>
-						<h3>Atmosphère</h3>
-						<h4>Composition:</h4>
-						<ul>
+					<div className="jupiter-atmosphere">
+						<h2>Atmosphère:</h2>
+						<h2>Composition:</h2>
+						<ul className="jupiter-atmosphere-list">
 							<li>Hydrogène: {jupiterData.atmosphere.composition.hydrogene}</li>
 							<li>Hélium: {jupiterData.atmosphere.composition.helium}</li>
 							<li>Autres: {jupiterData.atmosphere.composition.autres}</li>
 						</ul>
-						<h4>Caractéristiques:</h4>
-						<ul>
+						<h2>Caractéristiques:</h2>
+						<ul className="jupiter-atmosphere-particularites">
 							{jupiterData.atmosphere.particularites.map((part) => (
 								<li key={part}>{part}</li>
 							))}
 						</ul>
 					</div>
 
-					<div>
-						<h3>Satellites</h3>
+					<div className="jupiter-satellites">
+						<h2>Satellites:</h2>
 						<p>{jupiterData.satellites.nombre}</p>
-						<h4>Lunes principales:</h4>
-						<ul>
+						<h2>Lunes principales:</h2>
+						<ul className="jupiter-satellites-list">
 							{jupiterData.satellites.principaux.map((lune) => (
 								<li key={lune}>{lune}</li>
 							))}
@@ -139,25 +141,25 @@ const JupiterInfoCard = () => {
 					</div>
 
 					<div>
-						<h3>Anneaux</h3>
+						<h2>Anneaux:</h2>
 						<p>{jupiterData.anneaux}</p>
 					</div>
 
-					<div>
-						<h3>Composition</h3>
-						<ul>
+					<div className="jupiter-composition">
+						<h2>Composition:</h2>
+						<ul className="jupiter-composition-list">
 							<li>Couches externes: {jupiterData.composition.externe}</li>
 							<li>Structure interne: {jupiterData.composition.interne}</li>
 							<li>{jupiterData.composition.particularite}</li>
 						</ul>
 					</div>
 
-					<div>
-						<h3>Distances</h3>
-						<ul>
+					<div className="jupiter-distances">
+						<h2>Distances:</h2>
+						<ul className="jupiter-distances-list">
 							<li>Du Soleil: {jupiterData.distance.soleil}</li>
 							<li>De la Terre:</li>
-							<ul>
+							<ul className="jupiter-distances-terre">
 								<li>Minimum: {jupiterData.distance.terre.min}</li>
 								<li>Maximum: {jupiterData.distance.terre.max}</li>
 							</ul>
@@ -165,31 +167,31 @@ const JupiterInfoCard = () => {
 					</div>
 
 					<div>
-						<h3>Gravité</h3>
+						<h2>Gravité:</h2>
 						<p>{jupiterData.gravity}</p>
 					</div>
 
-					<div>
-						<h3>Particularités</h3>
-						<ul>
+					<div className="jupiter-particularites">
+						<h2>Particularités:</h2>
+						<ul className="jupiter-particularites-list">
 							{jupiterData.particularites.map((particularite) => (
 								<li key={particularite}>{particularite}</li>
 							))}
 						</ul>
 					</div>
 
-					<div>
-						<h3>Exploration</h3>
-						<h4>Sondes spatiales:</h4>
-						<ul>
+					<div className="jupiter-exploration">
+						<h2>Exploration:</h2>
+						<h2>Sondes spatiales:</h2>
+						<ul className="jupiter-exploration-sondes">
 							{jupiterData.exploration.sondes.map((sonde) => (
 								<li key={sonde}>{sonde}</li>
 							))}
 						</ul>
 					</div>
 				</div>
-			</div>
-		</div>
+			</article>
+		</section>
 	);
 };
 
