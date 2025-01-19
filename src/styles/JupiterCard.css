@@ -17,9 +17,11 @@
 
 .jupiter-card-body-content {
 	display: flex;
-	flex-direction: column;
+	flex-wrap: wrap;
 	gap: 1rem;
+	margin: 0 auto;
 	margin-top: 1rem;
+	width: 90%;
 }
 
 .jupiter-card-body-content > div {
@@ -76,4 +78,15 @@
 	text-decoration: none;
 	list-style-type: none;
 	margin-left: 1rem;
+}
+
+.jupiter-atmosphere > *:not(:first-child) {
+	margin-left: 1rem;
+}
+
+@media screen and (width > 1068px) {
+	.jupiter-card {
+		height: 100vh;
+		overflow-y: scroll;
+	}
 }

@@ -11,3 +11,7 @@ body {
 	background-color: rgb(32, 32, 32);
 	color: rgb(231, 231, 231);
 }
+
+:root {
+	font-size: 14px;
+}

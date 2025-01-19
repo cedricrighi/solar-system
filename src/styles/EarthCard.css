@@ -17,9 +17,11 @@
 
 .earth-card-body-content {
 	display: flex;
-	flex-direction: column;
+	flex-wrap: wrap;
 	gap: 1rem;
+	margin: 0 auto;
 	margin-top: 1rem;
+	width: 90%;
 }
 
 .earth-card-body-content > div {
@@ -67,4 +69,11 @@
 	text-decoration: none;
 	list-style-type: none;
 	margin-left: 1rem;
+}
+
+@media screen and (width > 1068px) {
+	.earth-card {
+		height: 100vh;
+		overflow-y: scroll;
+	}
 }

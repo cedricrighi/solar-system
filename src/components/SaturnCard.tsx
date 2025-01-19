@@ -53,10 +53,6 @@ const SaturnInfoCard = () => {
 		},
 		distance: {
 			soleil: "1.43 milliard km (9.5 UA)",
-			terre: {
-				min: "1.2 milliard km",
-				max: "1.67 milliard km",
-			},
 		},
 		gravity: "10.44 m/s²",
 		particularites: [
@@ -168,14 +164,9 @@ const SaturnInfoCard = () => {
 					</div>
 
 					<div className="saturn-distances">
-						<h2>Distances:</h2>
+						<h2>Distance:</h2>
 						<ul className="saturn-distances-list">
 							<li>Du Soleil: {saturnData.distance.soleil}</li>
-							<li>De la Terre:</li>
-							<ul className="saturn-distances-terre">
-								<li>Minimum: {saturnData.distance.terre.min}</li>
-								<li>Maximum: {saturnData.distance.terre.max}</li>
-							</ul>
 						</ul>
 					</div>
 

@@ -45,10 +45,6 @@ const JupiterInfoCard = () => {
 		},
 		distance: {
 			soleil: "778.5 millions km (5.2 UA)",
-			terre: {
-				min: "588 millions km",
-				max: "968 millions km",
-			},
 		},
 		gravity: "24.79 m/s²",
 		particularites: [
@@ -155,14 +151,9 @@ const JupiterInfoCard = () => {
 					</div>
 
 					<div className="jupiter-distances">
-						<h2>Distances:</h2>
+						<h2>Distance:</h2>
 						<ul className="jupiter-distances-list">
 							<li>Du Soleil: {jupiterData.distance.soleil}</li>
-							<li>De la Terre:</li>
-							<ul className="jupiter-distances-terre">
-								<li>Minimum: {jupiterData.distance.terre.min}</li>
-								<li>Maximum: {jupiterData.distance.terre.max}</li>
-							</ul>
 						</ul>
 					</div>
 

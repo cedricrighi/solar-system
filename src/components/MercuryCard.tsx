@@ -22,7 +22,6 @@ const MercuryInfoCard = () => {
 		},
 		distance: {
 			soleil: "57.9 millions km",
-			terre: "77.3 millions km",
 		},
 		gravity: "3.7 m/s²",
 	};
@@ -85,10 +84,9 @@ const MercuryInfoCard = () => {
 					</div>
 
 					<div className="mercury-distances">
-						<h2>Distances:</h2>
+						<h2>Distance:</h2>
 						<ul className="mercury-distances-list">
 							<li>Du Soleil: {mercuryData.distance.soleil}</li>
-							<li>De la Terre: {mercuryData.distance.terre}</li>
 						</ul>
 					</div>
 

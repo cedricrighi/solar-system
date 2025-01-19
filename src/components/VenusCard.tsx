@@ -24,7 +24,6 @@ const VenusInfoCard = () => {
 		},
 		distance: {
 			soleil: "108.2 millions km",
-			terre: "38.2 millions km (au plus proche)",
 		},
 		gravity: "8.87 m/s²",
 		particularites: [
@@ -92,10 +91,9 @@ const VenusInfoCard = () => {
 					</div>
 
 					<div className="venus-distances">
-						<h2>Distances:</h2>
+						<h2>Distance:</h2>
 						<ul className="venus-distances-list">
 							<li>Du Soleil: {venusData.distance.soleil}</li>
-							<li>De la Terre: {venusData.distance.terre}</li>
 						</ul>
 					</div>
 

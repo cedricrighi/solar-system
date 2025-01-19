@@ -15,9 +15,11 @@
 
 .sun-card-body-content {
 	display: flex;
-	flex-direction: column;
+	flex-wrap: wrap;
 	gap: 1rem;
+	margin: 0 auto;
 	margin-top: 1rem;
+	width: 90%;
 }
 
 .sun-card-body-content > div {

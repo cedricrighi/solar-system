@@ -17,9 +17,11 @@
 
 .uranus-card-body-content {
 	display: flex;
-	flex-direction: column;
+	flex-wrap: wrap;
 	gap: 1rem;
+	margin: 0 auto;
 	margin-top: 1rem;
+	width: 90%;
 }
 
 .uranus-card-body-content > div {
@@ -86,4 +88,11 @@
 .uranus-exploration > *:not(:first-child),
 .uranus-exploration-sondes li {
 	margin-left: 1rem;
+}
+
+@media screen and (width > 1068px) {
+	.uranus-card {
+		height: 100vh;
+		overflow-y: scroll;
+	}
 }

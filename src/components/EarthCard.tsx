@@ -51,7 +51,6 @@ const EarthInfoCard = () => {
 			"71% de la surface couverte d'eau liquide",
 			"Présence d'un champ magnétique protecteur",
 			"Une lune naturelle",
-			"Tectonique des plaques active",
 		],
 	};
 

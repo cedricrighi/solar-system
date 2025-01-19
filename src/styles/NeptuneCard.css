@@ -1,0 +1,104 @@
+.neptune-card {
+	padding: 1rem;
+}
+
+.neptune-card h2 {
+	font-size: 1rem;
+}
+
+.neptune-card-header h1 {
+	background: url(/textures/neptunemap.jpg);
+	color: transparent;
+	background-clip: text;
+	background-position: 270%;
+	background-size: 82% auto;
+	font-size: 2rem;
+}
+
+.neptune-card-body-content {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
+	margin: 0 auto;
+	margin-top: 1rem;
+	width: 90%;
+}
+
+.neptune-card-body-content > div {
+	display: flex;
+	align-content: flex-start;
+	gap: 0.7rem;
+}
+
+.neptune-temperature,
+.neptune-periodicity,
+.neptune-atmosphere,
+.neptune-satellites,
+.neptune-rings,
+.neptune-composition,
+.neptune-distances,
+.neptune-particularites,
+.neptune-exploration {
+	display: flex;
+	flex-direction: column;
+}
+
+.neptune-temperature-list,
+.neptune-periodicity-list,
+.neptune-atmosphere-list,
+.neptune-satellites-list,
+.neptune-rings-list,
+.neptune-rings-particularites,
+.neptune-composition-list,
+.neptune-distances-list,
+.neptune-particularites-list {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 0.5rem;
+}
+
+.neptune-temperature-list li,
+.neptune-periodicity-list li,
+.neptune-atmosphere-list li,
+.neptune-satellites-list li,
+.neptune-rings-list li,
+.neptune-composition-list li,
+.neptune-distances-list li,
+.neptune-particularites-list li,
+.neptune-exploration-sondes li {
+	text-decoration: none;
+	list-style-type: none;
+	margin-left: 1rem;
+}
+
+.neptune-rings-particularites li {
+	text-decoration: none;
+	list-style-type: none;
+	margin-left: 0rem;
+}
+
+.neptune-atmosphere-particularites {
+	text-decoration: none;
+	list-style-type: none;
+	margin-left: 2rem;
+}
+
+.neptune-atmosphere > h2:not(:first-child),
+.neptune-satellites > *:not(:first-child),
+.neptune-rings > *:not(:first-child),
+.neptune-distances-terre,
+.neptune-exploration > *:not(:first-child) {
+	margin-left: 1rem;
+}
+
+.neptune-atmosphere-list li {
+	margin-left: 2rem;
+}
+
+@media screen and (width > 1068px) {
+	.neptune-card {
+		height: 100vh;
+		overflow-y: scroll;
+	}
+}

@@ -1,5 +1,7 @@
 .mercury-card {
 	padding: 1rem;
+	height: 100vh;
+	overflow-y: scroll;
 }
 
 .mercury-card h2 {
@@ -15,9 +17,11 @@
 
 .mercury-card-body-content {
 	display: flex;
-	flex-direction: column;
+	flex-wrap: wrap;
 	gap: 1rem;
+	margin: 0 auto;
 	margin-top: 1rem;
+	width: 90%;
 }
 
 .mercury-card-body-content > div {
@@ -56,4 +60,11 @@
 	text-decoration: none;
 	list-style-type: none;
 	margin-left: 1rem;
+}
+
+@media screen and (width > 1068px) {
+	.mercury-card {
+		height: 100vh;
+		overflow-y: scroll;
+	}
 }

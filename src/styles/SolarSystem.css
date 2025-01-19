@@ -1,5 +1,20 @@
 .solar-system-canvas {
 	background-color: black;
 	width: 100vw !important;
-	height: 50vh !important;
+	height: 40vh !important;
+}
+
+@media screen and (width > 1064px) {
+	.solar-system-canvas {
+		width: 60vw !important;
+		height: 100vh !important;
+	}
+
+	.solar-system {
+		display: flex;
+	}
+}
+
+* {
+	width: fit-content;
 }

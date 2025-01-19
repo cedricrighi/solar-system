@@ -48,10 +48,6 @@ const UranusInfoCard = () => {
 		},
 		distance: {
 			soleil: "2.87 milliards km (19.2 UA)",
-			terre: {
-				min: "2.6 milliards km",
-				max: "3.2 milliards km",
-			},
 		},
 		gravity: "8.69 m/s²",
 		particularites: [
@@ -158,11 +154,6 @@ const UranusInfoCard = () => {
 						<h2>Distances:</h2>
 						<ul className="uranus-distances-list">
 							<li>Du Soleil: {uranusData.distance.soleil}</li>
-							<li>De la Terre:</li>
-							<ul className="uranus-distances-terre">
-								<li>Minimum: {uranusData.distance.terre.min}</li>
-								<li>Maximum: {uranusData.distance.terre.max}</li>
-							</ul>
 						</ul>
 					</div>
 

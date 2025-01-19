@@ -13,6 +13,7 @@ import VenusCard from "./VenusCard";
 import JupiterCard from "./JupiterCard";
 import SaturnCard from "./SaturnCard";
 import UranusCard from "./UranusCard";
+import NeptuneCard from "./NeptuneCard";
 
 export const SolarSystem = () => {
 	const planets = [
@@ -101,56 +102,58 @@ export const SolarSystem = () => {
 	const [planetClicked, setPlanetClicked] = useState<string | null>(null);
 
 	return (
-		<>
-			<Canvas
-				camera={{
-					position: [0, 5, 0],
-					fov: 75,
-					near: 0.1,
-					far: 1000,
-				}}
-				className="solar-system-canvas"
-			>
-				<ambientLight intensity={0.5} />
-				<pointLight
-					position={[0, 10, 0]}
-					intensity={5}
-					distance={200}
-					decay={0}
-				/>
+		<div className="solar-system">
+			<div>
+				<Canvas
+					camera={{
+						position: [0, 5, 0],
+						fov: 75,
+						near: 0.1,
+						far: 1000,
+					}}
+					className="solar-system-canvas"
+				>
+					<ambientLight intensity={0.5} />
+					<pointLight
+						position={[0, 10, 0]}
+						intensity={5}
+						distance={200}
+						decay={0}
+					/>
 
-				<MapControls
-					enableZoom={true}
-					enableRotate={false}
-					enableDamping={false}
-					panSpeed={1.5}
-					zoomSpeed={1.2}
-				/>
+					<MapControls
+						enableZoom={true}
+						enableRotate={false}
+						enableDamping={false}
+						panSpeed={1.5}
+						zoomSpeed={1.2}
+					/>
 
-				<Stars radius={100} depth={50} count={1000} factor={2} fade />
+					<Stars radius={100} depth={50} count={1000} factor={2} fade />
 
-				<Sun
-					position={[0, 0, 0]}
-					textureUrl="/textures/sunmap.jpg"
-					setPlanetClicked={setPlanetClicked}
-				/>
+					<Sun
+						position={[0, 0, 0]}
+						textureUrl="/textures/sunmap.jpg"
+						setPlanetClicked={setPlanetClicked}
+					/>
 
-				{planets.map((planet) => (
-					<group key={planet.id}>
-						<OrbitLine radius={planet.orbitRadius} />
-						<Planet
-							name={planet.name}
-							position={planet.position}
-							textureUrl={planet.textureUrl}
-							size={planet.size}
-							rotationSpeed={planet.rotationSpeed}
-							orbitSpeed={planet.orbitSpeed}
-							orbitRadius={planet.orbitRadius}
-							setPlanetClicked={setPlanetClicked}
-						/>
-					</group>
-				))}
-			</Canvas>
+					{planets.map((planet) => (
+						<group key={planet.id}>
+							<OrbitLine radius={planet.orbitRadius} />
+							<Planet
+								name={planet.name}
+								position={planet.position}
+								textureUrl={planet.textureUrl}
+								size={planet.size}
+								rotationSpeed={planet.rotationSpeed}
+								orbitSpeed={planet.orbitSpeed}
+								orbitRadius={planet.orbitRadius}
+								setPlanetClicked={setPlanetClicked}
+							/>
+						</group>
+					))}
+				</Canvas>
+			</div>
 			{planetClicked === "Sun" && <SunCard />}
 			{planetClicked === "Mercury" && <MercuryCard />}
 			{planetClicked === "Venus" && <VenusCard />}
@@ -160,6 +163,6 @@ export const SolarSystem = () => {
 			{planetClicked === "Saturn" && <SaturnCard />}
 			{planetClicked === "Uranus" && <UranusCard />}
 			{planetClicked === "Neptune" && <NeptuneCard />}
-		</>
+		</div>
 	);
 };

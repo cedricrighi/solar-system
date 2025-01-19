@@ -36,15 +36,10 @@ const MarsInfoCard = () => {
 		},
 		distance: {
 			soleil: "227.9 millions km",
-			terre: {
-				min: "55.7 millions km",
-				max: "401.3 millions km",
-			},
 		},
 		gravity: "3.72 m/s²",
 		particularites: [
 			"Plus grand volcan du système solaire (Mont Olympus)",
-			"Plus grand canyon (Valles Marineris)",
 			"Calottes polaires de glace d'eau et CO2",
 			"Traces d'eau liquide passée",
 			"Tempêtes de poussière globales",
@@ -132,14 +127,9 @@ const MarsInfoCard = () => {
 					</div>
 
 					<div className="mars-distances">
-						<h2>Distances:</h2>
+						<h2>Distance:</h2>
 						<ul className="mars-distances-list">
 							<li>Du Soleil: {marsData.distance.soleil}</li>
-							<li>De la Terre:</li>
-							<ul className="mars-distances-terre">
-								<li>Minimum: {marsData.distance.terre.min}</li>
-								<li>Maximum: {marsData.distance.terre.max}</li>
-							</ul>
 						</ul>
 					</div>
 
