@@ -7,7 +7,7 @@
 }
 
 .earth-card-header h1 {
-	background: url(/textures/earthmap.jpg);
+	background: url(/earthmap.jpg);
 	color: transparent;
 	background-clip: text;
 	background-position: top;

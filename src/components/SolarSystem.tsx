@@ -1,19 +1,21 @@
 import { Canvas } from "@react-three/fiber";
 import { MapControls, Stars } from "@react-three/drei";
 import "../styles/SolarSystem.css";
-import { Sun } from "./Sun";
-import { Planet } from "./Planet";
+import Sun from "./Sun";
+import Planet from "./Planet";
 import { OrbitLine } from "./OrbitLine";
 import { useState } from "react";
-import SunCard from "./SunCard";
-import MercuryCard from "./MercuryCard";
-import EarthCard from "./EarthCard";
-import MarsCard from "./MarsCard";
-import VenusCard from "./VenusCard";
-import JupiterCard from "./JupiterCard";
-import SaturnCard from "./SaturnCard";
-import UranusCard from "./UranusCard";
-import NeptuneCard from "./NeptuneCard";
+import React, { Suspense } from "react";
+
+const SunCard = React.lazy(() => import("./SunCard"));
+const MercuryCard = React.lazy(() => import("./MercuryCard"));
+const EarthCard = React.lazy(() => import("./EarthCard"));
+const MarsCard = React.lazy(() => import("./MarsCard"));
+const VenusCard = React.lazy(() => import("./VenusCard"));
+const JupiterCard = React.lazy(() => import("./JupiterCard"));
+const SaturnCard = React.lazy(() => import("./SaturnCard"));
+const UranusCard = React.lazy(() => import("./UranusCard"));
+const NeptuneCard = React.lazy(() => import("./NeptuneCard"));
 
 export const SolarSystem = () => {
 	const planets = [
@@ -21,39 +23,39 @@ export const SolarSystem = () => {
 			id: 1,
 			name: "Mercury",
 			position: [2, 0, 0] as [number, number, number],
-			textureUrl: "/textures/mercurymap.jpg",
+			textureUrl: "/solar-system/mercurymap.jpg",
 			size: 0.08,
 			rotationSpeed: 0.005,
-			orbitSpeed: 0.06,
+			orbitSpeed: 0.0415,
 			orbitRadius: 2,
 		},
 		{
 			id: 2,
 			name: "Venus",
 			position: [3, 0, 0] as [number, number, number],
-			textureUrl: "/textures/venusmap.jpg",
+			textureUrl: "/solar-system/venusmap.jpg",
 			size: 0.1,
 			rotationSpeed: 0.004,
-			orbitSpeed: 0.0225,
+			orbitSpeed: 0.0162,
 			orbitRadius: 3,
 		},
 		{
 			id: 3,
 			name: "Earth",
 			position: [4, 0, 0] as [number, number, number],
-			textureUrl: "/textures/earthmap.jpg",
+			textureUrl: "/solar-system/earthmap.jpg",
 			size: 0.1,
 			rotationSpeed: 0.005,
-			orbitSpeed: 0.015,
+			orbitSpeed: 0.01,
 			orbitRadius: 4,
 		},
 		{
 			id: 4,
 			name: "Mars",
 			position: [5, 0, 0] as [number, number, number],
-			textureUrl: "/textures/marsmap.jpg",
+			textureUrl: "/solar-system/marsmap.jpg",
 			size: 0.08,
-			rotationSpeed: 0.0045,
+			rotationSpeed: 0.0053,
 			orbitSpeed: 0.012,
 			orbitRadius: 5,
 		},
@@ -61,40 +63,40 @@ export const SolarSystem = () => {
 			id: 5,
 			name: "Jupiter",
 			position: [8, 0, 0] as [number, number, number],
-			textureUrl: "/textures/jupitermap.jpg",
+			textureUrl: "/solar-system/jupitermap.jpg",
 			size: 0.2,
 			rotationSpeed: 0.005,
-			orbitSpeed: 0.009,
+			orbitSpeed: 0.00084,
 			orbitRadius: 8,
 		},
 		{
 			id: 6,
 			name: "Saturn",
 			position: [10, 0, 0] as [number, number, number],
-			textureUrl: "/textures/saturnmap.jpg",
+			textureUrl: "/solar-system/saturnmap.jpg",
 			size: 0.15,
 			rotationSpeed: 0.004,
-			orbitSpeed: 0.007,
+			orbitSpeed: 0.0034,
 			orbitRadius: 10,
 		},
 		{
 			id: 7,
 			name: "Uranus",
 			position: [12, 0, 0] as [number, number, number],
-			textureUrl: "/textures/uranusmap.jpg",
+			textureUrl: "/solar-system/uranusmap.jpg",
 			size: 0.1,
 			rotationSpeed: 0.005,
-			orbitSpeed: 0.005,
+			orbitSpeed: 0.00012,
 			orbitRadius: 12,
 		},
 		{
 			id: 8,
 			name: "Neptune",
 			position: [14, 0, 0] as [number, number, number],
-			textureUrl: "/textures/neptunemap.jpg",
+			textureUrl: "/solar-system/neptunemap.jpg",
 			size: 0.1,
 			rotationSpeed: 0.0045,
-			orbitSpeed: 0.003,
+			orbitSpeed: 0.00006,
 			orbitRadius: 14,
 		},
 	];
@@ -133,7 +135,7 @@ export const SolarSystem = () => {
 
 					<Sun
 						position={[0, 0, 0]}
-						textureUrl="/textures/sunmap.jpg"
+						textureUrl="/solar-system/sunmap.jpg"
 						setPlanetClicked={setPlanetClicked}
 					/>
 
@@ -154,15 +156,17 @@ export const SolarSystem = () => {
 					))}
 				</Canvas>
 			</div>
-			{planetClicked === "Sun" && <SunCard />}
-			{planetClicked === "Mercury" && <MercuryCard />}
-			{planetClicked === "Venus" && <VenusCard />}
-			{planetClicked === "Earth" && <EarthCard />}
-			{planetClicked === "Mars" && <MarsCard />}
-			{planetClicked === "Jupiter" && <JupiterCard />}
-			{planetClicked === "Saturn" && <SaturnCard />}
-			{planetClicked === "Uranus" && <UranusCard />}
-			{planetClicked === "Neptune" && <NeptuneCard />}
+			<Suspense fallback={<div>Loading...</div>}>
+				{planetClicked === "Sun" && <SunCard />}
+				{planetClicked === "Mercury" && <MercuryCard />}
+				{planetClicked === "Venus" && <VenusCard />}
+				{planetClicked === "Earth" && <EarthCard />}
+				{planetClicked === "Mars" && <MarsCard />}
+				{planetClicked === "Jupiter" && <JupiterCard />}
+				{planetClicked === "Saturn" && <SaturnCard />}
+				{planetClicked === "Uranus" && <UranusCard />}
+				{planetClicked === "Neptune" && <NeptuneCard />}
+			</Suspense>
 		</div>
 	);
 };

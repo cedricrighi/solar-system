@@ -9,7 +9,7 @@ interface SunProps {
 	setPlanetClicked: (planetId: string | null) => void;
 }
 
-export const Sun = ({ position, textureUrl, setPlanetClicked }: SunProps) => {
+const Sun = ({ position, textureUrl, setPlanetClicked }: SunProps) => {
 	const meshRef = useRef<THREE.Mesh>(null);
 	const textureLoader = new THREE.TextureLoader();
 	const texture = useMemo(
@@ -25,28 +25,41 @@ export const Sun = ({ position, textureUrl, setPlanetClicked }: SunProps) => {
 
 	return (
 		<>
-			<EffectComposer>
-				<Bloom
-					intensity={1.5}
-					luminanceThreshold={0.9}
-					luminanceSmoothing={0.1}
-				/>
-			</EffectComposer>
-			<mesh
-				ref={meshRef}
-				position={position}
-				onClick={() => {
-					setPlanetClicked("Sun");
+			<group
+				onPointerOver={(e) => {
+					e.stopPropagation();
+					document.body.style.cursor = "pointer";
+				}}
+				onPointerOut={(e) => {
+					e.stopPropagation();
+					document.body.style.cursor = "auto";
 				}}
 			>
-				<sphereGeometry args={[1, 32, 32]} />
-				<meshStandardMaterial
-					emissive="orange"
-					emissiveIntensity={2}
-					map={texture}
-					emissiveMap={texture}
-				/>
-			</mesh>
+				<EffectComposer>
+					<Bloom
+						intensity={1.5}
+						luminanceThreshold={0.9}
+						luminanceSmoothing={0.1}
+					/>
+				</EffectComposer>
+				<mesh
+					ref={meshRef}
+					position={position}
+					onClick={() => {
+						setPlanetClicked("Sun");
+					}}
+				>
+					<sphereGeometry args={[1, 32, 32]} />
+					<meshStandardMaterial
+						emissive="orange"
+						emissiveIntensity={2}
+						map={texture}
+						emissiveMap={texture}
+					/>
+				</mesh>
+			</group>
 		</>
 	);
 };
+
+export default Sun;

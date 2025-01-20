@@ -13,7 +13,7 @@ interface PlanetProps {
 	setPlanetClicked: (planetId: string | null) => void;
 }
 
-export const Planet = ({
+const Planet = ({
 	position,
 	name,
 	textureUrl,
@@ -26,11 +26,9 @@ export const Planet = ({
 	const meshRef = useRef<THREE.Mesh>(null);
 	const orbitRef = useRef(0);
 
-	const textureLoader = new THREE.TextureLoader();
-	const texture = useMemo(
-		() => textureLoader.load(textureUrl),
-		[textureUrl, textureLoader.load],
-	);
+	const texture = useMemo(() => {
+		return new THREE.TextureLoader().load(textureUrl);
+	}, [textureUrl]);
 
 	useFrame((_, delta) => {
 		if (meshRef.current) {
@@ -43,13 +41,25 @@ export const Planet = ({
 	});
 
 	return (
-		<mesh
-			ref={meshRef}
-			position={position}
-			onClick={() => setPlanetClicked(name)}
-		>
-			<sphereGeometry args={[size, 32, 32]} />
-			<meshStandardMaterial map={texture} metalness={0.4} roughness={0.7} />
-		</mesh>
+		<group>
+			<mesh
+				ref={meshRef}
+				position={position}
+				onClick={() => setPlanetClicked(name)}
+				onPointerOver={(e) => {
+					e.stopPropagation();
+					document.body.style.cursor = "pointer";
+				}}
+				onPointerOut={(e) => {
+					e.stopPropagation();
+					document.body.style.cursor = "auto";
+				}}
+			>
+				<sphereGeometry args={[size, 32, 32]} />
+				<meshStandardMaterial map={texture} metalness={0.4} roughness={0.7} />
+			</mesh>
+		</group>
 	);
 };
+
+export default Planet;

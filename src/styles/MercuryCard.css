@@ -9,7 +9,7 @@
 }
 
 .mercury-card-header h1 {
-	background: url(/textures/mercurymap.jpg);
+	background: url(/mercurymap.jpg);
 	color: transparent;
 	background-clip: text;
 	font-size: 2rem;
